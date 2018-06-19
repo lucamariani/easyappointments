@@ -19,3 +19,9 @@ VALUES
     ('require_captcha', '0');
 
 INSERT INTO `ea_migrations` VALUES ('11');
+
+# adding my data
+INSERT INTO `ea_services` VALUES (1,'Copertina Facebook ( 1 settimana)',120,100.00,'Euro','copertina facebbok per una settimana','fixed',10,NULL);
+INSERT INTO `ea_users` VALUES (2,'Rei','Srls','info@eccellenzeitailane.com','','12837618723','','','','','',2);
+INSERT INTO `ea_user_settings` VALUES (2,'ei','e50eac6a7428a61e40d3e55fc8f44c00a7ddae014b5ae74b01d9ac419685d4f7','f74d5f946a99be0c247bf6503ce64d88f9d1fb1c8b18ee46c76ec6795aaa500c','{\"sunday\":null,\"monday\":{\"start\":\"12:00\",\"end\":\"14:00\",\"breaks\":[]},\"tuesday\":null,\"wednesday\":null,\"thursday\":null,\"friday\":null,\"saturday\":null}',0,0,NULL,NULL,5,5,'default');
+INSERT INTO `ea_services_providers` VALUES (2,1);

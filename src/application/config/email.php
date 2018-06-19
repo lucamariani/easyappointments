@@ -5,10 +5,10 @@
 // @link https://codeigniter.com/user_guide/libraries/email.html
 
 $config['useragent'] = 'Easy!Appointments';
-$config['protocol'] = 'mail'; // or 'smtp'
+$config['protocol'] = 'smtp'; // or 'mail'
 $config['mailtype'] = 'html'; // or 'text'
-// $config['smtp_host'] = '';
-// $config['smtp_user'] = ''; 
-// $config['smtp_pass'] = '';
-// $config['smtp_crypto'] = 'ssl'; // or 'tls'
-// $config['smtp_port'] = 25;
+$config['smtp_host'] = 'mail.eccellenzeitaliane.com';
+$config['smtp_user'] = 'estero@eccellenzeitaliane.com'; 
+$config['smtp_pass'] = '__Gja5f/cB__';
+$config['smtp_crypto'] = 'tls'; // or 'ssl'
+$config['smtp_port'] = 587;
