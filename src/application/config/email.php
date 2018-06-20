@@ -12,3 +12,5 @@ $config['smtp_user'] = 'estero@eccellenzeitaliane.com';
 $config['smtp_pass'] = '__Gja5f/cB__';
 $config['smtp_crypto'] = 'tls'; // or 'ssl'
 $config['smtp_port'] = 587;
+$config['check_certificate'] = false;
+
