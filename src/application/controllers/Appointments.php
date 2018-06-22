@@ -320,7 +320,7 @@ class Appointments extends CI_Controller {
     		return;
     	}
     	
-    	$this->appointments_model->set_payed( $this->input->post('appointment_id') )
+    	$this->appointments_model->set_payed( $this->input->post('appointment_id') );
     }
 
     /**
