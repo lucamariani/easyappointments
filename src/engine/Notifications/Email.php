@@ -72,6 +72,23 @@ class Email {
 
         return $templateHtml;
     }
+    
+    public function send_test( $msg ) 
+    {
+    	$mailer = $this->_createMailer();
+    	
+    	$mailer->From = 'l.mariani@eccellenzeitaliane.com';
+    	$mailer->FromName = 'test appl';
+    	$mailer->AddAddress('l.mariani@eccellenzeitaliane.com');
+    	$mailer->Subject = $msg;
+    	$mailer->Body = $msg;    	
+    	
+    	if ( ! $mailer->Send())
+    	{
+    		throw new \RuntimeException('Email could not been sent. Mailer Error (Line ' . __LINE__ . '): '
+    				. $mailer->ErrorInfo);
+    	}
+    }
 
     /**
      * Send an email with the appointment details.

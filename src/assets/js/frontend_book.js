@@ -144,6 +144,16 @@ window.FrontendBook = window.FrontendBook || {};
 
         }
     };
+    
+    function _setPayPalDetails( currServiceId ) {
+    	$.each(GlobalVariables.availableServices, function (indexService, service) {
+    		var serviceId = service['id'];
+    		if (serviceId == currServiceId) {
+    			$('#paypal_amount').val( service['price'] );
+    			$('#paypal_item_name').val( service['name'] );
+    		}
+    	});    	
+    }
 
     /**
      * This method binds the necessary event handlers for the book appointments page.
@@ -168,6 +178,7 @@ window.FrontendBook = window.FrontendBook || {};
          */
         $('#select-service').change(function () {
             var currServiceId = $('#select-service').val();
+            _setPayPalDetails( currServiceId );
             $('#select-provider').empty();
 
             $.each(GlobalVariables.availableProviders, function (indexProvider, provider) {

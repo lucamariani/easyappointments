@@ -24,6 +24,7 @@ $lang['fields_are_required'] = 'Fields with * are required!';
 $lang['step_four_title'] = 'Confirm Appointment';
 $lang['confirm'] = 'Confirm';
 $lang['update'] = 'Update';
+$lang['pay_now'] = 'Pay Now';
 $lang['cancel_appointment_hint'] = 'Press the "Cancel" button to remove the appointment from the company schedule.';
 $lang['cancel'] = 'Cancel';
 $lang['appointment_registered'] = 'Your appointment has been successfully registered!';

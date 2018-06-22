@@ -103,6 +103,16 @@ window.FrontendBookApi = window.FrontendBookApi || {};
             }
         }, 'json').fail(GeneralFunctions.ajaxFailureHandler);
     };
+    
+    /**
+     * Send payment form to Paypal.
+     *
+     * This method will make an ajax call to Paypal service
+     */
+    exports.printPostData = function () {
+    	var formData = jQuery.parseJSON($('input[name="post_data"]').val());
+    	console.log(formData);
+    }
 
     /**
      * Register an appointment to the database.

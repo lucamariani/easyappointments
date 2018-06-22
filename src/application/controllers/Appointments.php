@@ -303,6 +303,25 @@ class Appointments extends CI_Controller {
         }
         $this->load->view('appointments/book_success', $view);
     }
+    
+    /**
+     * 
+     * @param unknown $appointment_id
+     */
+    public function set_appointment_payed ()
+    {
+    	$this->load->model('appointments_model');
+    	
+    	if (empty($this->input->post('appointment_id')))
+    	{
+    		$this->output
+    		->set_content_type('application/json')
+    		->set_output(json_encode([]));
+    		return;
+    	}
+    	
+    	$this->appointments_model->set_payed( $this->input->post('appointment_id') )
+    }
 
     /**
      * [AJAX] Get the available appointment hours for the given date.

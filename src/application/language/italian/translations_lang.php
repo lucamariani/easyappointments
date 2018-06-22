@@ -25,6 +25,7 @@ $lang['fields_are_required'] = 'I campi contrassegnati con * sono obbligatori!';
 $lang['step_four_title'] = 'Conferma appuntamento';
 $lang['confirm'] = 'Conferma';
 $lang['update'] = 'Aggiorna';
+$lang['pay_now'] = 'Paga Ora';
 $lang['cancel_appointment_hint'] = 'Clicca sul bottone "Cancella" per rimuovere l\'appuntamento dalla pianificazione aziendale.';
 $lang['cancel'] = 'Annulla';
 $lang['appointment_registered'] = 'Il tuo appuntamento è stato registrato con successo!';

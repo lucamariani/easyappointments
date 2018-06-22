@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS `ea_appointments` (
     `notes` TEXT,
     `hash` TEXT,
     `is_unavailable` TINYINT(4) DEFAULT '0',
+	`is_payed` TINYINT(1) DEFAULT '0',
     `id_users_provider` INT(11),
     `id_users_customer` INT(11),
     `id_services` INT(11),

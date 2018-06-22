@@ -530,4 +530,32 @@ class Appointments_Model extends CI_Model {
             ['id' => $appointment['id_users_customer']])->row_array();
         return $appointment;
     }
+    
+    /**
+     * 
+     * @param unknown $appointment_id
+     * @param string $payed
+     * @throws Exception
+     * @return boolean
+     */
+    public function set_payed ( $appointment_id, $payed = true )
+    {
+    	if ( ! is_numeric($appointment_id))
+    	{
+    		throw new Exception('Invalid argument type $appointment_id (value:"' . $appointment_id . '")');
+    	}
+    	
+    	$num_rows = $this->db->get_where('ea_appointments', ['id' => $appointment_id])->num_rows();
+    	
+    	if ($num_rows == 0)
+    	{
+    		return FALSE; // Record does not exist.
+    	}
+    	
+    	$data = array(
+    			'is_payed' => $payed
+    	);
+    	$this->db->where('id', $appointment_id);
+    	return $this->db->update('ea_appointments', $data);
+    }
 }
