@@ -302,7 +302,10 @@
                             <input type="hidden" name="post_data" />
                         </form>
                         <?php else: ?>
-                        <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" style="display:inline-block" method="post">
+                        <form id="paypal-form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" style="display:inline-block" method="post">
+                        	<input type="hidden" name="csrfToken" />
+                            <input type="hidden" name="post_data" />
+                            
                         	<input type="hidden" value="_xclick" name="cmd">
                         	<input type="hidden" class="form-control" value="" name="amount" id="paypal_amount">
                         	<input type="hidden" value="https://www.eccellenzeitaliane.com/Static/img/logo150.png" name="image_url">
@@ -312,7 +315,7 @@
 							<input type="hidden" value="IT" name="lc">
 							<input type="hidden" value="1" name="cs">
 							<input type="hidden" value="/paypal/callback" name="notify_url">
-							<input type="hidden" value="/response?paymentResult=accepted" name="return">
+							<input type="hidden" value="/appointments/book_success" name="return">
 							<input type="hidden" value="/response?paymentResult=refused" name="cancel_return">
 							<button id="paypal-submit" type="submit" class="btn btn-success">
 								<span class="glyphicon glyphicon-ok"></span>
