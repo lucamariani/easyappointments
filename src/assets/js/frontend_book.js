@@ -329,7 +329,7 @@ window.FrontendBook = window.FrontendBook || {};
          *
          * @param {jQuery.Event} event
          */
-        $('#paypal-submit').click(function (event) {
+        $('#book-appointment-submit').click(function (event) {
             FrontendBookApi.registerAppointment();
         });
 

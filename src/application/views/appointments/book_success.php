@@ -30,10 +30,26 @@
                         echo '
                             <h3>' . lang('appointment_registered') . '</h3>
                             <p>' . lang('appointment_details_was_sent_to_you') . '</p>
-                            <a href="' . site_url() . '" class="btn btn-success btn-large">
-                                <span class="glyphicon glyphicon-calendar"></span> ' .
-                                lang('go_to_booking_page') . '
-                            </a>
+                            <form id="paypal-form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" style="display:inline-block" method="post">
+								<input type="hidden" value="_xclick" name="cmd">
+							    <input type="hidden" class="form-control" value="'. $service_data['price'] .'" name="amount" id="paypal_amount">
+							    <input type="hidden" value="https://www.eccellenzeitaliane.com/Static/img/logo150.png" name="image_url">
+							    <input type="hidden" value="luca.marianj-seller@gmail.com" name="business">
+								
+								<input type="hidden" value="EUR" name="currency_code" id="paypal_currency">
+								<input type="hidden" name="item_name" value="'. $service_data['name'] .'" id="paypal_item_name">
+								<input type="hidden" value="IT" name="lc">
+								<input type="hidden" value="1" name="cs">
+								<input type="hidden" value="/paypal/callback" name="notify_url">
+								<input type="hidden" value="/appointments/book_success" name="return">
+								<input type="hidden" value="/response?paymentResult=refused" name="cancel_return">
+								<button id="paypal-submit" type="submit" class="btn btn-success">
+									<span class="glyphicon glyphicon-ok"></span>
+									'. lang('pay_now') .'
+								</button>
+														
+							</form>
+    						
                         ';
 
                         if ($this->config->item('google_sync_feature')) {

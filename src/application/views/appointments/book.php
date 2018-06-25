@@ -156,7 +156,7 @@
                             <div id="service-description" style="display:none;"></div>
                         </div>
                     </div>
-                    
+
                     <div class="command-buttons">
                         <button type="button" id="button-next-1" class="btn button-next btn-primary"
                                 data-step_index="1">
@@ -283,7 +283,7 @@
                             </div>
                         </div>
                         <?php endif; ?>
-                    </div>                    
+                    </div>
 
                     <div class="command-buttons">
                         <button type="button" id="button-back-4" class="btn button-back btn-default"
@@ -291,39 +291,14 @@
                             <span class="glyphicon glyphicon-backward"></span>
                             <?= lang('back') ?>
                         </button>
-                        
-                        <?php if ( $manage_mode ): ?>
                         <form id="book-appointment-form" style="display:inline-block" method="post">
                             <button id="book-appointment-submit" type="button" class="btn btn-success">
                                 <span class="glyphicon glyphicon-ok"></span>
-                                <?= !$manage_mode ? lang('pay_now') : lang('update') ?>
+                                <?= !$manage_mode ? lang('confirm') : lang('update') ?>
                             </button>
                             <input type="hidden" name="csrfToken" />
                             <input type="hidden" name="post_data" />
                         </form>
-                        <?php else: ?>
-                        <form id="paypal-form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" style="display:inline-block" method="post">
-                        	<input type="hidden" name="csrfToken" />
-                            <input type="hidden" name="post_data" />
-                            
-                        	<input type="hidden" value="_xclick" name="cmd">
-                        	<input type="hidden" class="form-control" value="" name="amount" id="paypal_amount">
-                        	<input type="hidden" value="https://www.eccellenzeitaliane.com/Static/img/logo150.png" name="image_url">
-                        	<input type="hidden" value="luca.marianj-seller@gmail.com" name="business">
-							<input type="hidden" value="EUR" name="currency_code" id="paypal_currency">
-							<input type="hidden" name="item_name" value="" id="paypal_item_name">
-							<input type="hidden" value="IT" name="lc">
-							<input type="hidden" value="1" name="cs">
-							<input type="hidden" value="/paypal/callback" name="notify_url">
-							<input type="hidden" value="/appointments/book_success" name="return">
-							<input type="hidden" value="/response?paymentResult=refused" name="cancel_return">
-							<button id="paypal-submit" type="submit" class="btn btn-success">
-								<span class="glyphicon glyphicon-ok"></span>
-								<?= lang('pay_now'); ?>
-							</button>
-							
-                        </form>
-                        <?php endif; ?>
                     </div>
                 </div>
 
