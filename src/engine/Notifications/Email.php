@@ -348,7 +348,7 @@ class Email {
 
         if ($this->config['protocol'] === 'smtp')
         {
-        	$mailer->SMTPDebug  = 3;
+        	//$mailer->SMTPDebug  = 3;
             $mailer->isSMTP();
             $mailer->Host = $this->config['smtp_host'];
             $mailer->SMTPAuth = TRUE;
