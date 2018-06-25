@@ -27,17 +27,20 @@
                 </div>
                 <div class="col-xs-12 col-sm-10">
                     <?php
+                    print_r($appointment_data);
                         echo '
                             <h3>' . lang('appointment_registered') . '</h3>
-                            <p>' . lang('appointment_details_was_sent_to_you') . '</p>
+                            <p>' . lang('appointment_details_was_sent_to_you') . '</p>';
+                        if ( ! $appointment_data['is_payed']):
+                        ?>
                             <form id="paypal-form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" style="display:inline-block" method="post">
 								<input type="hidden" value="_xclick" name="cmd">
-							    <input type="hidden" class="form-control" value="'. $service_data['price'] .'" name="amount" id="paypal_amount">
+							    <input type="hidden" class="form-control" value="<?=$service_data['price']?>" name="amount" id="paypal_amount">
 							    <input type="hidden" value="https://www.eccellenzeitaliane.com/Static/img/logo150.png" name="image_url">
 							    <input type="hidden" value="luca.marianj-seller@gmail.com" name="business">
 								
 								<input type="hidden" value="EUR" name="currency_code" id="paypal_currency">
-								<input type="hidden" name="item_name" value="'. $service_data['name'] .'" id="paypal_item_name">
+								<input type="hidden" name="item_name" value="<?=$service_data['name']?>" id="paypal_item_name">
 								<input type="hidden" value="IT" name="lc">
 								<input type="hidden" value="1" name="cs">
 								<input type="hidden" value="/paypal/callback" name="notify_url">
@@ -45,12 +48,10 @@
 								<input type="hidden" value="/response?paymentResult=refused" name="cancel_return">
 								<button id="paypal-submit" type="submit" class="btn btn-success">
 									<span class="glyphicon glyphicon-ok"></span>
-									'. lang('pay_now') .'
+									<?=lang('pay_now')?>
 								</button>
-														
 							</form>
-    						
-                        ';
+    					<?php endif;
 
                         if ($this->config->item('google_sync_feature')) {
                             echo '
